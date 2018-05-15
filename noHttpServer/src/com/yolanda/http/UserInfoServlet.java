@@ -1,17 +1,3 @@
-/*
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.yolanda.http;
 
 import java.io.IOException;
@@ -27,16 +13,23 @@ import javax.servlet.http.HttpServletResponse;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-/**
- * Created in Mar 12, 2016 10:58:27 PM.
- * 
- * @author YOLANDA;
- */
-public class UserInfoServlet extends HttpServlet  {
+public class UserInfoServlet extends HttpServlet {
 
+	/**
+	 * Constructor of the object.
+	 */
 	public UserInfoServlet() {
 		super();
 	}
+
+	/**
+	 * Destruction of the servlet. <br>
+	 */
+	public void destroy() {
+		super.destroy(); // Just puts "destroy" string in log
+		// Put your code here
+	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter printWriter = response.getWriter();
@@ -72,10 +65,15 @@ public class UserInfoServlet extends HttpServlet  {
 		map.put("userName", "甘传谱");
 		map.put("password", "123456");
 		return JSON.toJSONString(map);
-//		Map<String, String> map = new HashMap();
-//		map.put("userName", "甘传谱");
-//		map.put("password", "123456");
-//		return JSON.toJSONString(map);
+	}
+
+	/**
+	 * Initialization of the servlet. <br>
+	 *
+	 * @throws ServletException if an error occurs
+	 */
+	public void init() throws ServletException {
+		// Put your code here
 	}
 
 }
