@@ -1,0 +1,21 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.gcp.starhttp"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+
+    // json parser.
+    implementation 'com.alibaba:fastjson:1.1.67.android'
+    //网络层
+    implementation 'com.yanzhenjie.nohttp:nohttp:1.1.10'
+
+}
